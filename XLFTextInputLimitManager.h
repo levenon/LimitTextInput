@@ -51,6 +51,6 @@ extern NSString *const XLFKeyboardDidReturnNotifacation;
 
 @property (nonatomic, assign) id<XLFTextInput> textInput;
 
-+ (BOOL)contentAllowTextInput:(id<XLFTextInput>)textInput content:(NSString *)content;
++ (BOOL)contentAllowTextInput:(id<XLFTextInput>)textInput text:(NSString *)text;
 
 @end

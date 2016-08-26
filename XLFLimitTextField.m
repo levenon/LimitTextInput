@@ -6,7 +6,6 @@
 //  Copyright (c) 2014年 Marike Jave. All rights reserved.
 //
 #import "XLFLimitTextField.h"
-#import "UIColor+Categories.h"
 #import "NSString+Categories.h"
 
 @interface XLFLimitTextField()
@@ -71,7 +70,7 @@
 - (void)setText:(NSString *)text{
     [super setText:text];
     
-    [self setCorrect:[XLFTextInputLimitManager contentAllowTextInput:self content:text]];
+    [self setCorrect:[XLFTextInputLimitManager contentAllowTextInput:self text:text]];
 }
 
 - (void)setTextLimitType:(XLFTextLimitType)textLimitType{

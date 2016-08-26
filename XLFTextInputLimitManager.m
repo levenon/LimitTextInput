@@ -88,7 +88,7 @@ NSString *const XLFKeyboardDidReturnNotifacation = @"KeyboardDidReturnNotifacati
 
 - (void)textViewDidEndEditing:(id<XLFTextInput>)textView;{
     
-    [textView setCorrect:[[self class] contentAllowTextInput:textView content:[textView text]]];
+    [textView setCorrect:[[self class] contentAllowTextInput:textView text:[textView text]]];
     
     if ([self delegate] && [[self delegate] respondsToSelector:@selector(textViewDidEndEditing:)]) {
         
@@ -204,7 +204,7 @@ NSString *const XLFKeyboardDidReturnNotifacation = @"KeyboardDidReturnNotifacati
 
 - (void)textFieldDidEndEditing:(id<XLFTextInput>)textField;{
     
-    [textField setCorrect:[[self class] contentAllowTextInput:textField content:[textField text]]];
+    [textField setCorrect:[[self class] contentAllowTextInput:textField text:[textField text]]];
     
     if ([self delegate] && [[self delegate] respondsToSelector:@selector(textFieldDidEndEditing:)]) {
         
