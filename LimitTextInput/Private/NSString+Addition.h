@@ -1,5 +1,5 @@
 //
-//  NSString+Categories
+//  NSString+Addition
 //  XLFCommonKit
 //
 //  Created by Marike Jave on 14-8-28.

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		08511CF31DD6C9BD00F899A2 /* NSString+Categories.m in Sources */ = {isa = PBXBuildFile; fileRef = 08511CF11DD6C9BD00F899A2 /* NSString+Categories.m */; };
+		08511CF31DD6C9BD00F899A2 /* NSString+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 08511CF11DD6C9BD00F899A2 /* NSString+Addition.m */; };
 		087A7CAA1DD6C2AC00874DD3 /* XLFLimitTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 087A7CA21DD6C2AC00874DD3 /* XLFLimitTextField.m */; };
 		087A7CAB1DD6C2AC00874DD3 /* XLFLimitTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 087A7CA41DD6C2AC00874DD3 /* XLFLimitTextView.m */; };
 		087A7CAC1DD6C2AC00874DD3 /* XLFTextInputLimitManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 087A7CA61DD6C2AC00874DD3 /* XLFTextInputLimitManager.m */; };
@@ -20,8 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		08511CF01DD6C9BD00F899A2 /* NSString+Categories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Categories.h"; sourceTree = "<group>"; };
-		08511CF11DD6C9BD00F899A2 /* NSString+Categories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Categories.m"; sourceTree = "<group>"; };
+		08511CF01DD6C9BD00F899A2 /* NSString+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Addition.h"; sourceTree = "<group>"; };
+		08511CF11DD6C9BD00F899A2 /* NSString+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Addition.m"; sourceTree = "<group>"; };
 		08511CF21DD6C9BD00F899A2 /* XLFConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLFConstants.h; sourceTree = "<group>"; };
 		087A7CA11DD6C2AC00874DD3 /* XLFLimitTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLFLimitTextField.h; sourceTree = "<group>"; };
 		087A7CA21DD6C2AC00874DD3 /* XLFLimitTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLFLimitTextField.m; sourceTree = "<group>"; };
@@ -55,8 +55,8 @@
 		08511CEF1DD6C9BD00F899A2 /* Private */ = {
 			isa = PBXGroup;
 			children = (
-				08511CF01DD6C9BD00F899A2 /* NSString+Categories.h */,
-				08511CF11DD6C9BD00F899A2 /* NSString+Categories.m */,
+				08511CF01DD6C9BD00F899A2 /* NSString+Addition.h */,
+				08511CF11DD6C9BD00F899A2 /* NSString+Addition.m */,
 				08511CF21DD6C9BD00F899A2 /* XLFConstants.h */,
 			);
 			path = Private;
@@ -192,7 +192,7 @@
 				C53D021A1D7033BF0055B017 /* ViewController.m in Sources */,
 				087A7CAA1DD6C2AC00874DD3 /* XLFLimitTextField.m in Sources */,
 				C53D02171D7033BF0055B017 /* AppDelegate.m in Sources */,
-				08511CF31DD6C9BD00F899A2 /* NSString+Categories.m in Sources */,
+				08511CF31DD6C9BD00F899A2 /* NSString+Addition.m in Sources */,
 				087A7CAB1DD6C2AC00874DD3 /* XLFLimitTextView.m in Sources */,
 				C53D02141D7033BF0055B017 /* main.m in Sources */,
 			);

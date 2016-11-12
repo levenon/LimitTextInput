@@ -6,7 +6,7 @@
 //  Copyright (c) 2014年 Marike Jave. All rights reserved.
 //
 #import "XLFLimitTextField.h"
-#import "NSString+Categories.h"
+#import "NSString+Addition.h"
 
 @interface XLFLimitTextField()
 

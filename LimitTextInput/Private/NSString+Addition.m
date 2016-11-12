@@ -1,15 +1,15 @@
 //
-//  NSString+Categories
+//  NSString+Addition
 //  XLFCommonKit
 //
 //  Created by Marike Jave on 14-8-28.
 //  Copyright (c) 2014年 Marike Jave. All rights reserved.
 //
 
-#import "NSString+Categories.h"
+#import "NSString+Addition.h"
 #import "XLFConstants.h"
 
-XLFLoadCategory(NSString_Categories)
+XLFLoadCategory(NSString_Addition)
 
 @implementation NSString (validate)
 

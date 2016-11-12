@@ -7,7 +7,7 @@
 //
 
 #import "XLFTextInputLimitManager.h"
-#import "NSString+Categories.h"
+#import "NSString+Addition.h"
 
 NSString *const XLFKeyboardDidReturnNotifacation = @"KeyboardDidReturnNotifacation";
 
