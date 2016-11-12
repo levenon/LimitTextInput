@@ -17,6 +17,6 @@ Pod::Spec.new do |s|
     s.frameworks ='Foundation','UIKit'
     s.platform = :ios
     s.ios.deployment_target = '7.0'
-    s.source_files = 'LimitTextInput/*.{h,m}'
+    s.source_files = 'LimitTextInput/**/*.{h,m}'
     s.private_header_files = 'LimitTextInput/Private/*.{h,m}'
 end
