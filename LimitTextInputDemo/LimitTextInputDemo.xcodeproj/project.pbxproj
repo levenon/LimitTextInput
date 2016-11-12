@@ -7,20 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		087A7CA91DD6C2AC00874DD3 /* NSString+Categories.m in Sources */ = {isa = PBXBuildFile; fileRef = 087A7C9F1DD6C2AC00874DD3 /* NSString+Categories.m */; };
+		087A7CAA1DD6C2AC00874DD3 /* XLFLimitTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 087A7CA21DD6C2AC00874DD3 /* XLFLimitTextField.m */; };
+		087A7CAB1DD6C2AC00874DD3 /* XLFLimitTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 087A7CA41DD6C2AC00874DD3 /* XLFLimitTextView.m */; };
+		087A7CAC1DD6C2AC00874DD3 /* XLFTextInputLimitManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 087A7CA61DD6C2AC00874DD3 /* XLFTextInputLimitManager.m */; };
 		C53D02141D7033BF0055B017 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C53D02131D7033BF0055B017 /* main.m */; };
 		C53D02171D7033BF0055B017 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C53D02161D7033BF0055B017 /* AppDelegate.m */; };
 		C53D021A1D7033BF0055B017 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C53D02191D7033BF0055B017 /* ViewController.m */; };
 		C53D021D1D7033BF0055B017 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C53D021B1D7033BF0055B017 /* Main.storyboard */; };
 		C53D021F1D7033BF0055B017 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C53D021E1D7033BF0055B017 /* Assets.xcassets */; };
 		C53D02221D7033BF0055B017 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C53D02201D7033BF0055B017 /* LaunchScreen.storyboard */; };
-		C53D022F1D7034540055B017 /* XLFLimitTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = C53D022A1D7034540055B017 /* XLFLimitTextField.m */; };
-		C53D02301D7034540055B017 /* XLFLimitTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = C53D022C1D7034540055B017 /* XLFLimitTextView.m */; };
-		C53D02311D7034540055B017 /* XLFTextInputLimitManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C53D022E1D7034540055B017 /* XLFTextInputLimitManager.m */; };
-		C53D02341D70348D0055B017 /* NSString+Categories.m in Sources */ = {isa = PBXBuildFile; fileRef = C53D02331D70348D0055B017 /* NSString+Categories.m */; };
-		C53D023B1D7035210055B017 /* NSData+Categories.m in Sources */ = {isa = PBXBuildFile; fileRef = C53D023A1D7035210055B017 /* NSData+Categories.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		087A7C9E1DD6C2AC00874DD3 /* NSString+Categories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Categories.h"; sourceTree = "<group>"; };
+		087A7C9F1DD6C2AC00874DD3 /* NSString+Categories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Categories.m"; sourceTree = "<group>"; };
+		087A7CA01DD6C2AC00874DD3 /* XLFConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLFConstants.h; sourceTree = "<group>"; };
+		087A7CA11DD6C2AC00874DD3 /* XLFLimitTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLFLimitTextField.h; sourceTree = "<group>"; };
+		087A7CA21DD6C2AC00874DD3 /* XLFLimitTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLFLimitTextField.m; sourceTree = "<group>"; };
+		087A7CA31DD6C2AC00874DD3 /* XLFLimitTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLFLimitTextView.h; sourceTree = "<group>"; };
+		087A7CA41DD6C2AC00874DD3 /* XLFLimitTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLFLimitTextView.m; sourceTree = "<group>"; };
+		087A7CA51DD6C2AC00874DD3 /* XLFTextInputLimitManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLFTextInputLimitManager.h; sourceTree = "<group>"; };
+		087A7CA61DD6C2AC00874DD3 /* XLFTextInputLimitManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLFTextInputLimitManager.m; sourceTree = "<group>"; };
 		C53D020F1D7033BF0055B017 /* LimitTextInputDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LimitTextInputDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C53D02131D7033BF0055B017 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C53D02151D7033BF0055B017 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -31,17 +39,6 @@
 		C53D021E1D7033BF0055B017 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C53D02211D7033BF0055B017 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C53D02231D7033BF0055B017 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C53D02291D7034540055B017 /* XLFLimitTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XLFLimitTextField.h; path = ../../XLFLimitTextField.h; sourceTree = "<group>"; };
-		C53D022A1D7034540055B017 /* XLFLimitTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XLFLimitTextField.m; path = ../../XLFLimitTextField.m; sourceTree = "<group>"; };
-		C53D022B1D7034540055B017 /* XLFLimitTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XLFLimitTextView.h; path = ../../XLFLimitTextView.h; sourceTree = "<group>"; };
-		C53D022C1D7034540055B017 /* XLFLimitTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XLFLimitTextView.m; path = ../../XLFLimitTextView.m; sourceTree = "<group>"; };
-		C53D022D1D7034540055B017 /* XLFTextInputLimitManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XLFTextInputLimitManager.h; path = ../../XLFTextInputLimitManager.h; sourceTree = "<group>"; };
-		C53D022E1D7034540055B017 /* XLFTextInputLimitManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XLFTextInputLimitManager.m; path = ../../XLFTextInputLimitManager.m; sourceTree = "<group>"; };
-		C53D02321D70348D0055B017 /* NSString+Categories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Categories.h"; path = "../../NSString+Categories.h"; sourceTree = "<group>"; };
-		C53D02331D70348D0055B017 /* NSString+Categories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Categories.m"; path = "../../NSString+Categories.m"; sourceTree = "<group>"; };
-		C53D02381D7034E80055B017 /* XLFConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XLFConstants.h; path = ../../XLFConstants.h; sourceTree = "<group>"; };
-		C53D02391D7035210055B017 /* NSData+Categories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+Categories.h"; path = "../../NSData+Categories.h"; sourceTree = "<group>"; };
-		C53D023A1D7035210055B017 /* NSData+Categories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+Categories.m"; path = "../../NSData+Categories.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +52,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		087A7C991DD6C2AC00874DD3 /* LimitTextInput */ = {
+			isa = PBXGroup;
+			children = (
+				087A7C9E1DD6C2AC00874DD3 /* NSString+Categories.h */,
+				087A7C9F1DD6C2AC00874DD3 /* NSString+Categories.m */,
+				087A7CA01DD6C2AC00874DD3 /* XLFConstants.h */,
+				087A7CA11DD6C2AC00874DD3 /* XLFLimitTextField.h */,
+				087A7CA21DD6C2AC00874DD3 /* XLFLimitTextField.m */,
+				087A7CA31DD6C2AC00874DD3 /* XLFLimitTextView.h */,
+				087A7CA41DD6C2AC00874DD3 /* XLFLimitTextView.m */,
+				087A7CA51DD6C2AC00874DD3 /* XLFTextInputLimitManager.h */,
+				087A7CA61DD6C2AC00874DD3 /* XLFTextInputLimitManager.m */,
+			);
+			name = LimitTextInput;
+			path = ../../LimitTextInput;
+			sourceTree = "<group>";
+		};
 		C53D02061D7033BF0055B017 = {
 			isa = PBXGroup;
 			children = (
@@ -74,17 +88,7 @@
 		C53D02111D7033BF0055B017 /* LimitTextInputDemo */ = {
 			isa = PBXGroup;
 			children = (
-				C53D02391D7035210055B017 /* NSData+Categories.h */,
-				C53D023A1D7035210055B017 /* NSData+Categories.m */,
-				C53D02381D7034E80055B017 /* XLFConstants.h */,
-				C53D02321D70348D0055B017 /* NSString+Categories.h */,
-				C53D02331D70348D0055B017 /* NSString+Categories.m */,
-				C53D02291D7034540055B017 /* XLFLimitTextField.h */,
-				C53D022A1D7034540055B017 /* XLFLimitTextField.m */,
-				C53D022B1D7034540055B017 /* XLFLimitTextView.h */,
-				C53D022C1D7034540055B017 /* XLFLimitTextView.m */,
-				C53D022D1D7034540055B017 /* XLFTextInputLimitManager.h */,
-				C53D022E1D7034540055B017 /* XLFTextInputLimitManager.m */,
+				087A7C991DD6C2AC00874DD3 /* LimitTextInput */,
 				C53D02151D7033BF0055B017 /* AppDelegate.h */,
 				C53D02161D7033BF0055B017 /* AppDelegate.m */,
 				C53D02181D7033BF0055B017 /* ViewController.h */,
@@ -176,13 +180,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C53D02311D7034540055B017 /* XLFTextInputLimitManager.m in Sources */,
-				C53D022F1D7034540055B017 /* XLFLimitTextField.m in Sources */,
-				C53D023B1D7035210055B017 /* NSData+Categories.m in Sources */,
+				087A7CAC1DD6C2AC00874DD3 /* XLFTextInputLimitManager.m in Sources */,
 				C53D021A1D7033BF0055B017 /* ViewController.m in Sources */,
-				C53D02301D7034540055B017 /* XLFLimitTextView.m in Sources */,
-				C53D02341D70348D0055B017 /* NSString+Categories.m in Sources */,
+				087A7CAA1DD6C2AC00874DD3 /* XLFLimitTextField.m in Sources */,
+				087A7CA91DD6C2AC00874DD3 /* NSString+Categories.m in Sources */,
 				C53D02171D7033BF0055B017 /* AppDelegate.m in Sources */,
+				087A7CAB1DD6C2AC00874DD3 /* XLFLimitTextView.m in Sources */,
 				C53D02141D7033BF0055B017 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
