@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
     s.license = 'MIT'
     s.author = { 'MarkeJave' => '308865427@qq.com' }
     s.source = { :git => 'https://github.com/MarkeJave/LimitTextInput.git', :tag => s.version.to_s }
-    s.source_files = 'LimitTextInput/**/*.{h,m}'
+    s.source_files = 'LimitTextInput/*.{h,m}'
     s.requires_arc = true
     s.frameworks ='Foundation','UIKit'
     s.platform = :ios
