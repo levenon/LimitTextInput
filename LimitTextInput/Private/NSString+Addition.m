@@ -1,15 +1,15 @@
 //
 //  NSString+Addition
-//  XLFCommonKit
+//  LimitTextInput
 //
 //  Created by Marike Jave on 14-8-28.
 //  Copyright (c) 2014年 Marike Jave. All rights reserved.
 //
 
 #import "NSString+Addition.h"
-#import "XLFConstants.h"
+#import "LTConstants.h"
 
-XLFLoadCategory(NSString_Addition)
+LTLoadCategory(NSString_Addition)
 
 @implementation NSString (validate)
 

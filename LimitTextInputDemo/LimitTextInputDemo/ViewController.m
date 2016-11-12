@@ -7,13 +7,13 @@
 //
 
 #import "ViewController.h"
-#import "XLFLimitTextField.h"
+#import "LTLimitTextField.h"
 
 @interface ViewController ()
-@property (weak, nonatomic) IBOutlet XLFLimitTextField *characterTextField;
-@property (weak, nonatomic) IBOutlet XLFLimitTextField *numberTextField;
-@property (weak, nonatomic) IBOutlet XLFLimitTextField *telephoneTextField;
-@property (weak, nonatomic) IBOutlet XLFLimitTextField *emailTextField;
+@property (weak, nonatomic) IBOutlet LTLimitTextField *characterTextField;
+@property (weak, nonatomic) IBOutlet LTLimitTextField *numberTextField;
+@property (weak, nonatomic) IBOutlet LTLimitTextField *telephoneTextField;
+@property (weak, nonatomic) IBOutlet LTLimitTextField *emailTextField;
 
 @end
 
@@ -23,18 +23,18 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    self.characterTextField.textLimitType = XLFTextLimitTypeLength;
-    self.characterTextField.textLimitInputType = XLFTextLimitInputTypeEnglish;
+    self.characterTextField.textLimitType = LTTextLimitTypeLength;
+    self.characterTextField.textLimitInputType = LTTextLimitInputTypeEnglish;
     self.characterTextField.textLimitSize = 10;
     
-    self.numberTextField.textLimitType = XLFTextLimitTypeLength;
-    self.numberTextField.textLimitInputType = XLFTextLimitInputTypeNumber;
+    self.numberTextField.textLimitType = LTTextLimitTypeLength;
+    self.numberTextField.textLimitInputType = LTTextLimitInputTypeNumber;
     
-    self.telephoneTextField.textLimitType = XLFTextLimitTypeLength;
-    self.telephoneTextField.textLimitInputType = XLFTextLimitInputTypeTelephoneNumber;
+    self.telephoneTextField.textLimitType = LTTextLimitTypeLength;
+    self.telephoneTextField.textLimitInputType = LTTextLimitInputTypeTelephoneNumber;
     
-    self.emailTextField.textLimitType = XLFTextLimitTypeLength;
-    self.emailTextField.textLimitInputType = XLFTextLimitInputTypeEmail;
+    self.emailTextField.textLimitType = LTTextLimitTypeLength;
+    self.emailTextField.textLimitInputType = LTTextLimitInputTypeEmail;
     
 }
 

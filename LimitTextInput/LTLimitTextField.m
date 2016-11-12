@@ -1,20 +1,20 @@
 //
-//  XLFLimitTextField.m
-//  XLFCommonKit
+//  LTLimitTextField.m
+//  LimitTextInput
 //
 //  Created by Marike Jave on 4/11/13.
 //  Copyright (c) 2014年 Marike Jave. All rights reserved.
 //
-#import "XLFLimitTextField.h"
+#import "LTLimitTextField.h"
 #import "NSString+Addition.h"
 
-@interface XLFLimitTextField()
+@interface LTLimitTextField()
 
-@property (nonatomic , strong) XLFTextInputLimitManager *limitManager;
+@property (nonatomic , strong) LTTextInputLimitManager *limitManager;
 
 @end
 
-@implementation XLFLimitTextField
+@implementation LTLimitTextField
 
 - (void)awakeFromNib{
     [super awakeFromNib];
@@ -57,11 +57,11 @@
     return [[self limitManager] delegate];
 }
 
-- (XLFTextInputLimitManager *)limitManager{
+- (LTTextInputLimitManager *)limitManager{
     
     if (!_limitManager) {
         
-        _limitManager = [[XLFTextInputLimitManager alloc] init];
+        _limitManager = [[LTTextInputLimitManager alloc] init];
         [_limitManager setTextInput:self];
     }
     return _limitManager;
@@ -70,10 +70,10 @@
 - (void)setText:(NSString *)text{
     [super setText:text];
     
-    [self setCorrect:[XLFTextInputLimitManager contentAllowTextInput:self text:text]];
+    [self setCorrect:[LTTextInputLimitManager contentAllowTextInput:self text:text]];
 }
 
-- (void)setTextLimitType:(XLFTextLimitType)textLimitType{
+- (void)setTextLimitType:(LTTextLimitType)textLimitType{
     _textLimitType = textLimitType;
     
     [self config];
@@ -91,7 +91,7 @@
 }
 
 - (void)unmarkText;{
-    if ([self textLimitType] != XLFTextLimitTypeNone) {
+    if ([self textLimitType] != LTTextLimitTypeNone) {
         UITextRange *markedTextRange = [self markedTextRange];
         NSString *originMarkedText = [self textInRange:markedTextRange];
         NSInteger markedStartOffset = [self offsetFromPosition:[self beginningOfDocument] toPosition:[markedTextRange start]];
@@ -109,7 +109,7 @@
 }
 
 - (void)setMarkedText:(NSString *)markedText selectedRange:(NSRange)selectedRange;{
-    if ([self textLimitType] != XLFTextLimitTypeNone) {
+    if ([self textLimitType] != LTTextLimitTypeNone) {
         UITextRange *markedTextRange = [self markedTextRange];
         NSString *originMarkedText = [self textInRange:markedTextRange];
         NSInteger markedStartOffset = [self offsetFromPosition:[self beginningOfDocument] toPosition:[markedTextRange start]];

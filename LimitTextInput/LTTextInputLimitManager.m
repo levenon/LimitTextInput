@@ -1,21 +1,21 @@
 //
-//  XLFTextInputLimitManager.m
-//  XLFCommonKit
+//  LTTextInputLimitManager.m
+//  LimitTextInput
 //
 //  Created by Marike Jave on 14-12-4.
 //  Copyright (c) 2014年 Marike Jave. All rights reserved.
 //
 
-#import "XLFTextInputLimitManager.h"
+#import "LTTextInputLimitManager.h"
 #import "NSString+Addition.h"
 
-NSString *const XLFKeyboardDidReturnNotifacation = @"KeyboardDidReturnNotifacation";
+NSString *const LTKeyboardDidReturnNotifacation = @"KeyboardDidReturnNotifacation";
 
-@interface XLFTextInputLimitManager ()
+@interface LTTextInputLimitManager ()
 
 @end
 
-@implementation XLFTextInputLimitManager
+@implementation LTTextInputLimitManager
 
 - (void)dealloc{
     
@@ -36,22 +36,14 @@ NSString *const XLFKeyboardDidReturnNotifacation = @"KeyboardDidReturnNotifacati
 }
 
 - (IBAction)didTextChanged:(NSNotification*)sender{
-    
-    id<XLFTextInput> textInput = [sender object];
-    
-    if (textInput == [self textInput] && [textInput textLimitType] != XLFTextLimitTypeNone && ![[textInput markedTextRange] start]) {
-        
-        if ([textInput textLimitType] == XLFTextLimitTypeByte) {
-            
+    id<LTTextInput> textInput = [sender object];
+    if (textInput == [self textInput] && [textInput textLimitType] != LTTextLimitTypeNone && ![[textInput markedTextRange] start]) {
+        if ([textInput textLimitType] == LTTextLimitTypeByte) {
             if ([[textInput text] stringLength] > [textInput textLimitSize]) {
-                
                 [textInput setText:[[textInput text] substringInLimitByteSize:[textInput textLimitSize]]];
             }
-        }
-        else if ([textInput textLimitType] == XLFTextLimitTypeLength){
-            
+        } else if ([textInput textLimitType] == LTTextLimitTypeLength){
             if ([[textInput text] length] > [textInput textLimitSize]) {
-                
                 [textInput setText:[[textInput text] substringToIndex:[textInput textLimitSize]-1]];
             }
         }
@@ -60,7 +52,7 @@ NSString *const XLFKeyboardDidReturnNotifacation = @"KeyboardDidReturnNotifacati
 
 #pragma mark - UITextViewDelegate
 
-- (BOOL)textViewShouldBeginEditing:(id<XLFTextInput>)textView;{
+- (BOOL)textViewShouldBeginEditing:(id<LTTextInput>)textView;{
     
     if ([self delegate] && [[self delegate] respondsToSelector:@selector(textViewShouldBeginEditing:)]) {
         
@@ -69,7 +61,7 @@ NSString *const XLFKeyboardDidReturnNotifacation = @"KeyboardDidReturnNotifacati
     return YES;
 }
 
-- (BOOL)textViewShouldEndEditing:(id<XLFTextInput>)textView;{
+- (BOOL)textViewShouldEndEditing:(id<LTTextInput>)textView;{
     
     if ([self delegate] && [[self delegate] respondsToSelector:@selector(textViewShouldEndEditing:)]) {
         
@@ -78,7 +70,7 @@ NSString *const XLFKeyboardDidReturnNotifacation = @"KeyboardDidReturnNotifacati
     return YES;
 }
 
-- (void)textViewDidBeginEditing:(id<XLFTextInput>)textView;{
+- (void)textViewDidBeginEditing:(id<LTTextInput>)textView;{
     
     if ([self delegate] && [[self delegate] respondsToSelector:@selector(textViewDidBeginEditing:)]) {
         
@@ -86,7 +78,7 @@ NSString *const XLFKeyboardDidReturnNotifacation = @"KeyboardDidReturnNotifacati
     }
 }
 
-- (void)textViewDidEndEditing:(id<XLFTextInput>)textView;{
+- (void)textViewDidEndEditing:(id<LTTextInput>)textView;{
     
     [textView setCorrect:[[self class] contentAllowTextInput:textView text:[textView text]]];
     
@@ -96,7 +88,7 @@ NSString *const XLFKeyboardDidReturnNotifacation = @"KeyboardDidReturnNotifacati
     }
 }
 
-- (BOOL)textView:(UITextView<XLFTextInput> *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text;{
+- (BOOL)textView:(UITextView<LTTextInput> *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text;{
     BOOL result = YES;
     UITextRange *markedTextRange = [textView markedTextRange];
     //获取高亮部分
@@ -115,11 +107,11 @@ NSString *const XLFKeyboardDidReturnNotifacation = @"KeyboardDidReturnNotifacati
         }
     }
     if ([text length]) {
-        if ([textView textLimitType] == XLFTextLimitTypeByte) {
+        if ([textView textLimitType] == LTTextLimitTypeByte) {
             
             result = [[self class] textInput:textView content:content shouldChangeTextInRange:range limitTextByteWithReplacementText:text marked:position != nil];
         }
-        else if ([textView textLimitType] == XLFTextLimitTypeLength) {
+        else if ([textView textLimitType] == LTTextLimitTypeLength) {
             
             result = [[self class] textInput:textView content:content shouldChangeTextInRange:range limitTextLengthWithReplacementText:text marked:position != nil];
         }
@@ -136,7 +128,7 @@ NSString *const XLFKeyboardDidReturnNotifacation = @"KeyboardDidReturnNotifacati
         result = [[self delegate] textView:(id)textView shouldChangeTextInRange:range replacementText:text];
     }
     if (result && [text isEqualToString:@"\n"] && [textView returnKeyType] != UIReturnKeyDefault) {
-        [[NSNotificationCenter defaultCenter] postNotificationName:XLFKeyboardDidReturnNotifacation object:[NSNumber numberWithInteger:[textView returnKeyType]]];
+        [[NSNotificationCenter defaultCenter] postNotificationName:LTKeyboardDidReturnNotifacation object:[NSNumber numberWithInteger:[textView returnKeyType]]];
     }
     return result;
 }
@@ -177,7 +169,7 @@ NSString *const XLFKeyboardDidReturnNotifacation = @"KeyboardDidReturnNotifacati
 
 #pragma mark - UITextFieldDelegate
 
-- (BOOL)textFieldShouldBeginEditing:(id<XLFTextInput>)textField;{
+- (BOOL)textFieldShouldBeginEditing:(id<LTTextInput>)textField;{
     
     if ([self delegate] && [[self delegate] respondsToSelector:@selector(textFieldShouldBeginEditing:)]) {
         
@@ -186,14 +178,14 @@ NSString *const XLFKeyboardDidReturnNotifacation = @"KeyboardDidReturnNotifacati
     return YES;
 }
 
-- (void)textFieldDidBeginEditing:(id<XLFTextInput>)textField;{
+- (void)textFieldDidBeginEditing:(id<LTTextInput>)textField;{
     
     if ([self delegate] && [[self delegate] respondsToSelector:@selector(textFieldDidBeginEditing:)]) {
         
         [[self delegate] textFieldDidBeginEditing:(id)textField];
     }
 }
-- (BOOL)textFieldShouldEndEditing:(id<XLFTextInput>)textField;{
+- (BOOL)textFieldShouldEndEditing:(id<LTTextInput>)textField;{
     
     if ([self delegate] && [[self delegate] respondsToSelector:@selector(textFieldShouldEndEditing:)]) {
         
@@ -202,7 +194,7 @@ NSString *const XLFKeyboardDidReturnNotifacation = @"KeyboardDidReturnNotifacati
     return YES;
 }
 
-- (void)textFieldDidEndEditing:(id<XLFTextInput>)textField;{
+- (void)textFieldDidEndEditing:(id<LTTextInput>)textField;{
     
     [textField setCorrect:[[self class] contentAllowTextInput:textField text:[textField text]]];
     
@@ -212,7 +204,7 @@ NSString *const XLFKeyboardDidReturnNotifacation = @"KeyboardDidReturnNotifacati
     }
 }
 
-- (BOOL)textField:(id<XLFTextInput>)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string;{
+- (BOOL)textField:(id<LTTextInput>)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string;{
     BOOL result = YES;
     UITextRange *markedTextRange = [textField markedTextRange];
     //获取高亮部分
@@ -231,11 +223,11 @@ NSString *const XLFKeyboardDidReturnNotifacation = @"KeyboardDidReturnNotifacati
         }
     }
     if ([string length]) {
-        if ([textField textLimitType] == XLFTextLimitTypeByte) {
+        if ([textField textLimitType] == LTTextLimitTypeByte) {
             
             result = [[self class] textInput:textField content:content shouldChangeTextInRange:range limitTextByteWithReplacementText:string marked:position != nil];
         }
-        else if ([textField textLimitType] == XLFTextLimitTypeLength) {
+        else if ([textField textLimitType] == LTTextLimitTypeLength) {
             
             result = [[self class] textInput:textField content:content shouldChangeTextInRange:range limitTextLengthWithReplacementText:string marked:position != nil];
         }
@@ -253,7 +245,7 @@ NSString *const XLFKeyboardDidReturnNotifacation = @"KeyboardDidReturnNotifacati
     return result;
 }
 
-- (BOOL)textFieldShouldClear:(id<XLFTextInput>)textField;{
+- (BOOL)textFieldShouldClear:(id<LTTextInput>)textField;{
     
     if ([self delegate] && [[self delegate] respondsToSelector:@selector(textFieldShouldClear:)]) {
         return [[self delegate] textFieldShouldClear:(id)textField];
@@ -261,7 +253,7 @@ NSString *const XLFKeyboardDidReturnNotifacation = @"KeyboardDidReturnNotifacati
     return YES;
 }
 
-- (BOOL)textFieldShouldReturn:(id<XLFTextInput>)textField;{
+- (BOOL)textFieldShouldReturn:(id<LTTextInput>)textField;{
     
     BOOL result = YES;
     if ([self delegate] && [[self delegate] respondsToSelector:@selector(textFieldShouldReturn:)]) {
@@ -269,13 +261,13 @@ NSString *const XLFKeyboardDidReturnNotifacation = @"KeyboardDidReturnNotifacati
     }
     
     if (result) {
-        [[NSNotificationCenter defaultCenter] postNotificationName:XLFKeyboardDidReturnNotifacation object:[NSNumber numberWithInteger:[textField returnKeyType]]];
+        [[NSNotificationCenter defaultCenter] postNotificationName:LTKeyboardDidReturnNotifacation object:[NSNumber numberWithInteger:[textField returnKeyType]]];
     }
     
     return result;
 }
 
-+ (BOOL)textInput:(id<XLFTextInput>)textInput content:(NSString *)content shouldChangeTextInRange:(NSRange)range limitTextByteWithReplacementText:(NSString *)text marked:(BOOL)marked;{
++ (BOOL)textInput:(id<LTTextInput>)textInput content:(NSString *)content shouldChangeTextInRange:(NSRange)range limitTextByteWithReplacementText:(NSString *)text marked:(BOOL)marked;{
     if (![textInput isKindOfClass:[UITextField class]] && ![textInput isKindOfClass:[UITextView class]]) {
         return NO;
     }
@@ -317,7 +309,7 @@ NSString *const XLFKeyboardDidReturnNotifacation = @"KeyboardDidReturnNotifacati
     return YES;
 }
 
-+ (BOOL)textInput:(id<XLFTextInput>)textInput content:(NSString *)content shouldChangeTextInRange:(NSRange)range limitTextLengthWithReplacementText:(NSString *)text marked:(BOOL)marked{
++ (BOOL)textInput:(id<LTTextInput>)textInput content:(NSString *)content shouldChangeTextInRange:(NSRange)range limitTextLengthWithReplacementText:(NSString *)text marked:(BOOL)marked{
     if (![textInput isKindOfClass:[UITextField class]] && ![textInput isKindOfClass:[UITextView class]]) {
         return NO;
     }
@@ -363,100 +355,100 @@ NSString *const XLFKeyboardDidReturnNotifacation = @"KeyboardDidReturnNotifacati
     }
 }
 
-+ (BOOL)textInput:(id<XLFTextInput>)textInput content:(NSString *)content shouldAllowInputInRange:(NSRange)range inputText:(NSString *)inputText{
++ (BOOL)textInput:(id<LTTextInput>)textInput content:(NSString *)content shouldAllowInputInRange:(NSRange)range inputText:(NSString *)inputText{
     NSString *text = [content stringByReplacingCharactersInRange:range withString:inputText];
     switch ([textInput textLimitInputType]) {
             
-            case XLFTextLimitInputTypeNone:
+            case LTTextLimitInputTypeNone:
             return YES;
             break;
             
-            case XLFTextLimitInputTypeEnglish:       // 纯英文
+            case LTTextLimitInputTypeEnglish:       // 纯英文
             return [text isEnglishCharacter];
             break;
             
-            case XLFTextLimitInputTypeChinese:       // 纯中文
+            case LTTextLimitInputTypeChinese:       // 纯中文
             return [text isChineseCharacter];
             break;
             
-            case XLFTextLimitInputTypeNumber:        // 纯数字
+            case LTTextLimitInputTypeNumber:        // 纯数字
             return [text isNumber];
             break;
             
-            case XLFTextLimitInputTypeFloatNumber:      // 小数
+            case LTTextLimitInputTypeFloatNumber:      // 小数
             return [text isNumberOrDecimals];
             break;
             
-            case XLFTextLimitInputTypeTelephoneNumber:  // 手机号码
+            case LTTextLimitInputTypeTelephoneNumber:  // 手机号码
             return [text isTelephoneNumber];
             break;
             
-            case XLFTextLimitInputTypeEmail:            // 邮箱
+            case LTTextLimitInputTypeEmail:            // 邮箱
             return [text isEmail];
             break;
             
-            case XLFTextLimitInputTypeEnglishOrChinese: // 中英混合
-            case XLFTextLimitInputTypeEnglishAndChinese:// 中英混合
+            case LTTextLimitInputTypeEnglishOrChinese: // 中英混合
+            case LTTextLimitInputTypeEnglishAndChinese:// 中英混合
             return [text isChineseOrEnglishCharacter];
             break;
             
-            case XLFTextLimitInputTypeEnglishOrNumber:  // 英文或数字混合
-            case XLFTextLimitInputTypeEnglishAndNumber: // 英文和数字混合
+            case LTTextLimitInputTypeEnglishOrNumber:  // 英文或数字混合
+            case LTTextLimitInputTypeEnglishAndNumber: // 英文和数字混合
             return [text isNumberOrEnglishCharacter];
             break;
     }
     return YES;
 }
 
-+ (BOOL)contentAllowTextInput:(id<XLFTextInput>)textInput{
++ (BOOL)contentAllowTextInput:(id<LTTextInput>)textInput{
     return [self contentAllowTextInput:textInput text:[textInput text]];
 }
 
-+ (BOOL)contentAllowTextInput:(id<XLFTextInput>)textInput text:(NSString *)text{
++ (BOOL)contentAllowTextInput:(id<LTTextInput>)textInput text:(NSString *)text{
     BOOL correct = YES;
     switch ([textInput textLimitInputType]) {
             
-            case XLFTextLimitInputTypeNone:
+            case LTTextLimitInputTypeNone:
             correct = YES;
             break;
             
-            case XLFTextLimitInputTypeEnglish:       // 纯英文
+            case LTTextLimitInputTypeEnglish:       // 纯英文
             correct = [text isEnglishCharacter];
             break;
             
-            case XLFTextLimitInputTypeChinese:       // 纯中文
+            case LTTextLimitInputTypeChinese:       // 纯中文
             correct = [text isChineseCharacter];
             break;
             
-            case XLFTextLimitInputTypeNumber:        // 纯数字
+            case LTTextLimitInputTypeNumber:        // 纯数字
             correct = [text isNumber];
             break;
             
-            case XLFTextLimitInputTypeFloatNumber:      // 小数
+            case LTTextLimitInputTypeFloatNumber:      // 小数
             correct = [text isNumberOrDecimals];
             break;
             
-            case XLFTextLimitInputTypeTelephoneNumber:  // 手机号码
+            case LTTextLimitInputTypeTelephoneNumber:  // 手机号码
             correct = [text isTelephoneNumber];
             break;
             
-            case XLFTextLimitInputTypeEmail:            // 邮箱
+            case LTTextLimitInputTypeEmail:            // 邮箱
             correct = [text isFullEmail];
             break;
             
-            case XLFTextLimitInputTypeEnglishOrChinese:// 中英混合
+            case LTTextLimitInputTypeEnglishOrChinese:// 中英混合
             correct = [text isChineseOrEnglishCharacter];
             break;
             
-            case XLFTextLimitInputTypeEnglishOrNumber: // 英文和数字混合
+            case LTTextLimitInputTypeEnglishOrNumber: // 英文和数字混合
             correct = [text isNumberOrEnglishCharacter];
             break;
             
-            case XLFTextLimitInputTypeEnglishAndChinese:// 中英混合
+            case LTTextLimitInputTypeEnglishAndChinese:// 中英混合
             correct = [text isChineseOrEnglishCharacter];
             break;
             
-            case XLFTextLimitInputTypeEnglishAndNumber: // 英文和数字混合
+            case LTTextLimitInputTypeEnglishAndNumber: // 英文和数字混合
             correct = [text isNumberAndEnglishCharacter];
             break;
     }
